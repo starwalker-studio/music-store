@@ -1,0 +1,18 @@
+.navbar-menu-color{
+    background-color: #1b1b1b;    
+    transition: .4s;
+}
+
+.navbar-return{
+    transition: .4s;
+}
+
+.logo-nav-top{
+    width: 10.5%;
+    transition: .4s;
+}
+
+.logo-nav{
+    width: 5.5%;
+    transition: .4s;
+}
