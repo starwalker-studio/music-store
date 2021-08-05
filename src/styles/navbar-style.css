@@ -1,18 +1,22 @@
 .navbar-menu-color{
     background-color: #1b1b1b;    
-    transition: .4s;
+    transition: .3s;
 }
 
 .navbar-return{
-    transition: .4s;
+    background: rgb(34,34,34);
+    background: linear-gradient(180deg, 
+    rgba(34,34,34,1) 0%, 
+    rgba(34,34,34,0.09877454399728647) 100%);
+    transition: .3s;
 }
 
 .logo-nav-top{
     width: 10.5%;
-    transition: .4s;
+    transition: .3s;
 }
 
 .logo-nav{
     width: 5.5%;
-    transition: .4s;
+    transition: .3s;
 }

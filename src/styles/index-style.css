@@ -1,0 +1,44 @@
+.image-background-index{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    max-width: 100% !important;
+    color: whitesmoke;
+    text-shadow: 0px 0px 4px #000000;
+}
+
+.button-margin-slider{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.text-top-index{
+    margin-top: 25%;
+}
+
+.text-bottom-index{
+    margin-bottom: 26%;
+    width: 17ex;
+    height: 5ex;
+    background: none;
+    border: white;
+    border: ridge;
+    color: white;
+    align-items: initial;
+    font-size: 2.5ex;
+}
+
+.button-slide-style{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3em;
+}
+
+.button-slide-style:hover{
+    color: rgb(156, 156, 156);
+    transition: .3s;
+}
