@@ -5,6 +5,7 @@
     max-width: 100% !important;
     color: whitesmoke;
     text-shadow: 0px 0px 4px #000000;
+    transition: .5s;
 }
 
 .button-margin-slider{
@@ -23,12 +24,15 @@
     margin-bottom: 26%;
     width: 17ex;
     height: 5ex;
-    background: none;
+    background: rgb(34,34,34);
+    background: linear-gradient(180deg, rgba(34,34,34,0.7682423311121324) 0%, rgba(34,34,34,0.6758053563222164) 100%);
     border: white;
     border: ridge;
+    border-width: 3px;
     color: white;
     align-items: initial;
-    font-size: 2.5ex;
+    font-size: 24.6px;
+    font-weight: 500;
 }
 
 .button-slide-style{
