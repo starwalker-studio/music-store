@@ -1,26 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../styles/navbar-style.css';
 
 const Navbar = () => {
-    const [navbar, setNavbar] = useState(false);
-    const changeBackground = () => {
-        if (window.scrollY >= 80) {
-            setNavbar(true);
-        } else {
-            setNavbar(false);
-        }
-    }
-    window.addEventListener('scroll', changeBackground);
     return (
-        <nav className={
-            navbar ? 'navbar navbar-expand-lg navbar-dark fixed-top navbar-menu-color'
-                : 'navbar navbar-expand-lg navbar-dark fixed-top navbar-return'
-        }>
+        <nav className='navbar navbar-expand-lg navbar-dark fixed-top navbar-menu-color'>
             <div className="container-fluid">
-                <img src="/img/logo-white-nav.png" className={
-                    navbar ? 'logo-nav ms-5' : 'logo-nav-top ms-5'
-                } alt="" />
+                <img src="/img/logo-white-nav.png" className='logo-nav ms-5' alt="sound garage" />
                 <div className="text-left me-5">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -37,6 +22,9 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-item nav-link me-3" to="/" exact>Preferences</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-item nav-link me-3" to="/" exact>Log in</NavLink>
                             </li>
                         </ul>
                     </div>

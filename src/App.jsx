@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import Index from './components/Index';
+import Navbar from './components/Navbar/Navbar';
+import Index from './components/Index/Index';
 const App = () => {
 
   return (

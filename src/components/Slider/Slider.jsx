@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import '../styles/index-style.css';
 
 const Slider = () => {
 
@@ -23,7 +22,7 @@ const Slider = () => {
     useEffect(() => {
         window.setInterval(() => {
             setImg(img => img + 1);
-        }, 6700);
+        }, 10000);
     }, []);
 
     img === 5 && setImg(1);
