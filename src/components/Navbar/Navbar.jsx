@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <nav className='navbar navbar-expand-lg navbar-dark fixed-top navbar-menu-color'>
+        <nav className='navbar navbar-expand-lg navbar-dark navbar-menu-color'>
             <div className="container-fluid">
                 <img src="/img/logo-white-nav.png" className='logo-nav ms-5' alt="sound garage" />
                 <div className="text-left me-5">

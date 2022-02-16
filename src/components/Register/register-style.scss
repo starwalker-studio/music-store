@@ -1,0 +1,45 @@
+.my-account-title {
+  background-color: #5a6e99;
+  display: flex;
+  color: $register-text-color;
+  border-top-right-radius: 0.25rem !important;
+  border-top-left-radius: 0.25rem !important;
+
+  &-icon {
+    background-color: #485777;
+    border-top-left-radius: 0.25rem !important;
+    padding: 1ex;
+    padding-left: 1.7ex;
+    padding-right: 1.7ex;
+  }
+}
+
+.create-account-text {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.7119981781775211) 40%,
+    rgba(207, 234, 255, 1) 100%
+  );
+}
+
+#proceed {
+  border: solid #d9d9d9;
+  border-top-width: medium;
+  border-right-width: medium;
+  border-bottom-width: medium;
+  border-left-width: medium;
+  border-width: 0 1px 1px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-radius: 0 0 5px 5px;
+  padding: 0 15px;
+  text-align: center;
+}
+
+#proceed p {
+  border-top: 1px solid #ccc;
+  margin: 0;
+  padding: 20px 0 20px;
+}

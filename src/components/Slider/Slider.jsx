@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const Slider = () => {
 
@@ -70,7 +71,9 @@ const Slider = () => {
                         <FirstText />
                         <SecondText />
                         <div className="text-center">
-                            <button className="text-bottom-index">Get Started</button>
+                            <NavLink to="/create_account" exact>
+                                <button className="text-bottom-index">Get Started</button>
+                            </NavLink>
                         </div>
                     </div>
                     <div className="col text-end button-margin-slider">
