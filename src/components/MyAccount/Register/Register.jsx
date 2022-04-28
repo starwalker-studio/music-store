@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { registerNewAccount } from '../../../redux/newAccountRedux';
 import * as environment from '../../../environment';
 
 const Register = () => {
@@ -29,6 +31,15 @@ const Register = () => {
     const [validName, setValidName] = useState();
     const [validLastName, setValidLastName] = useState();
     const [validMail, setValidMail] = useState();
+    // Object dispatch
+    const [account, setAccount] = useState({
+        username: '', password: '', userFirstName: '', userLastName: '', userMail: ''
+    });
+    // button active
+    const [button, setButton] = useState(false);
+
+    const dispatch = useDispatch();
+
     const submitAccount = () => {
         if (!userName.trim()) {
             setInValid('form-control is-invalid mb-2');
@@ -79,13 +90,9 @@ const Register = () => {
         console.log('lastname: ' + validLastName);
         console.log('mail: ' + validMail);
         if (validUserName && validPassword && validName && validLastName && validMail) {
-            console.log('entra');
-            console.log(userName);
-            console.log(password);
-            console.log(confirmPassword);
-            console.log(name);
-            console.log(lastName);
-            console.log(mail);
+            console.log(account);
+            dispatch(registerNewAccount(account));
+            setButton(true);
         } else {
             console.log('No furula');
         }
@@ -110,6 +117,10 @@ const Register = () => {
                                     setWarningUser(true);
                                     setValidUserName(true);
                                 }
+                                setAccount({
+                                    ...account,
+                                    username: e.target.value
+                                })
                             }}
                             value={userName}
                             required />
@@ -145,6 +156,10 @@ const Register = () => {
                                     setNotSamePassword(true)
                                     setValidPassword(true);
                                 }
+                                setAccount({
+                                    ...account,
+                                    password: e.target.value
+                                })
                             }}
                             value={confirmPassword} disabled={!password.trim()} />
                         {!warningConfirmPassword && (<p className="invalid-return">Please confirm your password</p>)}
@@ -161,6 +176,10 @@ const Register = () => {
                                     setWarningName(true);
                                     setValidName(true);
                                 }
+                                setAccount({
+                                    ...account,
+                                    userFirstName: e.target.value
+                                })
                             }}
                             value={name} />
                         {!warningName && (<p className="invalid-return">Please enter your name</p>)}
@@ -173,6 +192,10 @@ const Register = () => {
                                     setWarningLastName(true);
                                     setValidLastName(true);
                                 }
+                                setAccount({
+                                    ...account,
+                                    userLastName: e.target.value
+                                })
                             }}
                             value={lastName} />
                         {!warningLastName && (<p className="invalid-return">Please enter your last name</p>)}
@@ -193,6 +216,12 @@ const Register = () => {
                                     setInValidMail('form-control is-valid mb-2')
                                     setValidMail(true)
                                 }
+                                setAccount({
+                                    ...account,
+                                    userMail: e.target.value,
+                                    active: "true",
+                                    role: { "id": 2 }
+                                })
                             }}
                             value={mail} />
                         {!warningMail && (<p className="invalid-return">Please enter your mail</p>)}
@@ -204,7 +233,8 @@ const Register = () => {
                 <p>
                     <button type="button"
                         className="btn btn-success px-4 fs-5 fst-italic"
-                        onClick={() => { submitAccount() }}>Create Your Account</button>
+                        onClick={() => submitAccount()}
+                        disabled={button}>Create Your Account</button>
                 </p>
             </div>
         </div>
