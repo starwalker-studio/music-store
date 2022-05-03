@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerNewAccount } from '../../../redux/newAccountRedux';
 import * as environment from '../../../environment';
 
@@ -38,7 +38,16 @@ const Register = () => {
     // button active
     const [button, setButton] = useState(false);
 
+    const created = useSelector(store => store.newAccount.created);
+    const token = useSelector(store => store.newAccount.token);
+
+    console.log(created);
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        setButton(created);
+    }, [created])
 
     const submitAccount = () => {
         if (!userName.trim()) {
@@ -84,15 +93,11 @@ const Register = () => {
                 return
             }
         }
-        console.log('username: ' + validUserName);
-        console.log('password: ' + validPassword);
-        console.log('name: ' + validName);
-        console.log('lastname: ' + validLastName);
-        console.log('mail: ' + validMail);
         if (validUserName && validPassword && validName && validLastName && validMail) {
             console.log(account);
             dispatch(registerNewAccount(account));
-            setButton(true);
+            setButton(created);
+            console.log(token);
         } else {
             console.log('No furula');
         }
@@ -233,7 +238,10 @@ const Register = () => {
                 <p>
                     <button type="button"
                         className="btn btn-success px-4 fs-5 fst-italic"
-                        onClick={() => submitAccount()}
+                        onClick={() => {
+                            submitAccount()
+                            setButton(true)
+                        }}
                         disabled={button}>Create Your Account</button>
                 </p>
             </div>

@@ -15,17 +15,22 @@ const Toast = Swal.mixin({
 
 // Constants
 const initData = {
-  response: [],
+  created: null,
+  token: "",
 };
 
 // Types
-const NEW_ACCOUNT_REGISTER = "NEW_ACCOUNT_REGISTER";
+const NEW_USER_REGISTER = "NEW_USER_REGISTER";
 
 // Reducer
 export default function myAccountReducer(state = initData, action) {
   switch (action.type) {
-    case NEW_ACCOUNT_REGISTER:
-      return { ...state, response: action.account };
+    case NEW_USER_REGISTER:
+      return {
+        ...state,
+        created: action.userCreated,
+        token: action.tokenResponse,
+      };
     default:
       return state;
   }
@@ -39,6 +44,10 @@ export const registerNewAccount = (newUser) => async (dispatch) => {
   authBody.append("username", newUser.username);
   authBody.append("password", newUser.password);
   authBody.append("grant_type", "password");
+  dispatch({
+    type: NEW_USER_REGISTER,
+    userCreated: true,
+  });
   try {
     await axios
       .post("/save", body, {
@@ -50,9 +59,17 @@ export const registerNewAccount = (newUser) => async (dispatch) => {
       .then((response) => {
         console.log(response.data);
         status = response.data.status;
+        dispatch({
+          type: NEW_USER_REGISTER,
+          userCreated: response.data.created,
+        });
       });
     if (status === 201) {
       console.log("works!");
+      dispatch({
+        type: NEW_USER_REGISTER,
+        userCreated: true,
+      });
       await axios
         .post("/oauth/token", authBody, {
           headers: {
@@ -60,8 +77,13 @@ export const registerNewAccount = (newUser) => async (dispatch) => {
             "Content-Type": "application/x-www-form-urlencoded",
           },
         })
-        .then((responseNewUser) => {
-          console.log(responseNewUser.data.access_token);
+        .then((userToken) => {
+          console.log(userToken.data.access_token);
+          dispatch({
+            type: NEW_USER_REGISTER,
+            tokenResponse: userToken.data.access_token,
+            userCreated: true,
+          });
           Toast.fire({
             icon: "success",
             title: "New user created",
