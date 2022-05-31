@@ -1,5 +1,6 @@
 import axios from "axios";
 import Swal from "sweetalert2";
+import jwt_decode from "jwt-decode";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -13,10 +14,21 @@ const Toast = Swal.mixin({
   },
 });
 
+const ToastError = Swal.mixin({
+  toast: true,
+  position: "center",
+  showConfirmButton: true,
+  timer: 8000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});
+
 // Constants
 const initData = {
   created: null,
-  token: "",
 };
 
 // Types
@@ -29,7 +41,6 @@ export default function myAccountReducer(state = initData, action) {
       return {
         ...state,
         created: action.userCreated,
-        token: action.tokenResponse,
       };
     default:
       return state;
@@ -57,7 +68,6 @@ export const registerNewAccount = (newUser) => async (dispatch) => {
         },
       })
       .then((response) => {
-        console.log(response.data);
         status = response.data.status;
         dispatch({
           type: NEW_USER_REGISTER,
@@ -65,7 +75,6 @@ export const registerNewAccount = (newUser) => async (dispatch) => {
         });
       });
     if (status === 201) {
-      console.log("works!");
       dispatch({
         type: NEW_USER_REGISTER,
         userCreated: true,
@@ -78,10 +87,12 @@ export const registerNewAccount = (newUser) => async (dispatch) => {
           },
         })
         .then((userToken) => {
-          console.log(userToken.data.access_token);
+          localStorage.setItem(
+            "user",
+            JSON.stringify(jwt_decode(userToken.data.access_token))
+          );
           dispatch({
             type: NEW_USER_REGISTER,
-            tokenResponse: userToken.data.access_token,
             userCreated: true,
           });
           Toast.fire({
@@ -102,5 +113,14 @@ export const registerNewAccount = (newUser) => async (dispatch) => {
     }
   } catch (error) {
     console.log(error);
+    ToastError.fire({
+      icon: "error",
+      title: "Server disconnected",
+      text: "Please try again later or contact to your technical support",
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer || result.isConfirmed) {
+        window.location.href = "/";
+      }
+    });
   }
 };

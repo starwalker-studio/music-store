@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const [localUser, setLocalUser] = useState({});
+
+    useEffect(() => { setLocalUser(JSON.parse(localStorage.getItem('user'))) }, []);
+
+    // const { user_name, nombre, correo } = localUser;
+
+    // console.log(user_name);
+
     return (
         <nav className='navbar navbar-expand-lg navbar-dark navbar-menu-color'>
             <div className="container-fluid">
@@ -23,8 +32,37 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-item nav-link me-3" to="/" exact>Preferences</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-item nav-link me-3" to="/" exact>Log in</NavLink>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle"
+                                    role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" id="navbarDropdown"
+                                    href="#0">
+                                    {
+                                        localUser ? localUser.user_name : 'Account'
+                                    }</a>
+                                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    {
+                                        localUser ? (
+                                            <li className="p-3">
+                                                <div className="d-grid col mx-auto mb-2">
+                                                    <button className="btn btn-dark">Log out</button>
+                                                </div>
+                                                <div className="flex-fill">
+                                                    <NavLink className="small" to="/" exact>My account</NavLink>
+                                                </div>
+                                            </li>
+                                        ) : (
+                                                <li className="p-3">
+                                                    <div className="d-grid col mx-auto mb-2">
+                                                        <button className="btn btn-dark">Log in</button>
+                                                    </div>
+                                                    <div className="flex-fill">
+                                                        <NavLink className="small" to="/" exact>Create your account</NavLink>
+                                                    </div>
+                                                </li>
+                                            )
+                                    }
+                                </ul>
                             </li>
                         </ul>
                     </div>

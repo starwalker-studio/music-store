@@ -39,9 +39,6 @@ const Register = () => {
     const [button, setButton] = useState(false);
 
     const created = useSelector(store => store.newAccount.created);
-    const token = useSelector(store => store.newAccount.token);
-
-    console.log(created);
 
     const dispatch = useDispatch();
 
@@ -53,6 +50,7 @@ const Register = () => {
         if (!userName.trim()) {
             setInValid('form-control is-invalid mb-2');
             setWarningUser(false);
+            // setButton(false);
             return
         }
         if (!password.trim()) {
@@ -94,14 +92,13 @@ const Register = () => {
             }
         }
         if (validUserName && validPassword && validName && validLastName && validMail) {
-            console.log(account);
             dispatch(registerNewAccount(account));
             setButton(created);
-            console.log(token);
-        } else {
-            console.log('No furula');
         }
     }
+
+    console.log(button);
+
     return (
         <div>
             <div className="d-flex justify-content-center border-start border-end">
@@ -240,7 +237,7 @@ const Register = () => {
                         className="btn btn-success px-4 fs-5 fst-italic"
                         onClick={() => {
                             submitAccount()
-                            setButton(true)
+                            // setButton(true)
                         }}
                         disabled={button}>Create Your Account</button>
                 </p>
