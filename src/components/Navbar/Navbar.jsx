@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <nav className='navbar navbar-expand-lg navbar-dark navbar-menu-color'>
-            <div className="container-fluid">
+            <div className="container">
                 <img src="/img/logo-white-nav.png" className='logo-nav ms-5' alt="sound garage" />
                 <div className="text-left me-5">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -52,15 +52,15 @@ const Navbar = () => {
                                                 </div>
                                             </li>
                                         ) : (
-                                                <li className="p-3">
-                                                    <div className="d-grid col mx-auto mb-2">
-                                                        <button className="btn btn-dark">Log in</button>
-                                                    </div>
-                                                    <div className="flex-fill">
-                                                        <NavLink className="small" to="/" exact>Create your account</NavLink>
-                                                    </div>
-                                                </li>
-                                            )
+                                            <li className="p-3">
+                                                <div className="d-grid col mx-auto mb-2">
+                                                    <button className="btn btn-dark">Log in</button>
+                                                </div>
+                                                <div className="flex-fill">
+                                                    <NavLink className="small" to="/" exact>Create your account</NavLink>
+                                                </div>
+                                            </li>
+                                        )
                                     }
                                 </ul>
                             </li>
