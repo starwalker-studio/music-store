@@ -4,7 +4,7 @@ import Slider from '../Slider/Slider';
 const Index = () => {
 
     return (
-        <div>
+        <div className='container'>
             <Slider />
         </div>
     )

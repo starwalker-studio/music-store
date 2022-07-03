@@ -4,7 +4,7 @@ import "./scss/global.scss";
 import App from "./App";
 import { Provider } from "react-redux";
 import generateStore from "./redux/store";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/scss/bootstrap.scss";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "@sweetalert2/theme-dark/dark.css";
 
