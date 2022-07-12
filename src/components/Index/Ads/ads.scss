@@ -89,7 +89,7 @@
 
     &__cta {
         bottom: 0;
-        color: #0072ba;
+        color: $button-background-color;
         font-size: 14px;
         font-weight: 600;
         left: 0;
@@ -114,7 +114,7 @@
     .value-ads__links a:active,
     .value-ads__links a:focus,
     .value-ads__links a:hover {
-        border: 2px solid #0072ba;
+        border: 2px solid $button-background-color;
         -webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, .15);
         box-shadow: 0 10px 40px rgba(0, 0, 0, .15);
         -webkit-transform: scale(1.05);
@@ -125,7 +125,7 @@
     .value-ads__links a:active .value-ads__icon,
     .value-ads__links a:focus .value-ads__icon,
     .value-ads__links a:hover .value-ads__icon {
-        border: 2px solid #0072ba
+        border: 2px solid $button-background-color;
     }
 
     .value-ads__links a:active .value-ads__cta,

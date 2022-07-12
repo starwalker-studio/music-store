@@ -1,0 +1,79 @@
+.popular-categories {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 3.5em;
+}
+
+.popcat-grid {
+    padding-top: 1.5em;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+a.popcat-item {
+    color: #4f4f4f;
+    font-size: 15px;
+    font-weight: 600;
+    outline-offset: -5px;
+    padding: 15px 15px 30px;
+    text-decoration: none;
+    // -webkit-transform: translateZ(0);
+    width: 16%;
+}
+
+.popcat-image {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 14vw;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    max-height: 145px;
+    max-width: 145px;
+    -webkit-transition: background .15s, -webkit-transform .15s, -webkit-box-shadow .15s;
+    transition: background .15s, -webkit-transform .15s, -webkit-box-shadow .15s;
+    -o-transition: transform .15s, box-shadow .15s, background .15s;
+    transition: transform .15s, box-shadow .15s, background .15s;
+    transition: transform .15s, box-shadow .15s, background .15s, -webkit-transform .15s, -webkit-box-shadow .15s;
+    width: 14vw;
+}
+
+.popcat-image img {
+    height: auto;
+    mix-blend-mode: multiply;
+    width: 70%;
+}
+
+@supports(mix-blend-mode:multiply) {
+    .popcat-image {
+        background: #eeebe7;
+    }
+}
+
+a.popcat-item:hover .popcat-image {
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 2px $button-background-color;
+    box-shadow: 0 0 0 2px $button-background-color;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
