@@ -1,7 +1,8 @@
 import React from 'react';
 import Slider from '../Slider/Slider';
-import Ads from '../Index/Ads/Ads';
-import PopItems from '../Index/Popular-Items/PopItems';
+import Ads from './Ads/Ads';
+import PopItems from './Popular-Items/PopItems';
+import FeaturedBrands from './Featured-Brands/FeaturedBrands';
 
 const Index = () => {
     return (
@@ -9,6 +10,7 @@ const Index = () => {
             <Slider />
             <Ads />
             <PopItems />
+            <FeaturedBrands />
         </div>
     )
 }

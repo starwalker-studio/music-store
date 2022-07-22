@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const Slider = () => {
     return (
         <div>
-            <div id="carouselExampleIndicators" className="carousel carousel-dark slide"
+            <div id="indexCarouselItems" className="carousel carousel-dark slide"
                 data-bs-ride="carousel" data-bs-touch="false" data-bs-interval="false">
                 <div className="carousel-inner text-button">
                     <div className="carousel-item active text-center">
@@ -22,11 +22,11 @@ const Slider = () => {
                         <button className="text-button__slide-3">Shop Now</button>
                     </div>
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button className="carousel-control-prev" type="button" data-bs-target="#indexCarouselItems" data-bs-slide="prev">
                     <span className="button-carousel-slider carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button className="carousel-control-next" type="button" data-bs-target="#indexCarouselItems" data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
