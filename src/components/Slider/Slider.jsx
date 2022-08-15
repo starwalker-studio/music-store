@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 
 const Slider = () => {
@@ -11,7 +9,11 @@ const Slider = () => {
                 <div className="carousel-inner text-button">
                     <div className="carousel-item active text-center">
                         <img src="/img/index/index-1.png" className="d-block w-100" alt="..." />
-                        <button className="text-button__slide-1">Get Started</button>
+                            <button type="button" 
+                                    className="text-button__slide-1"
+                                    onClick={()=>{
+                                        window.location = '/create_account';
+                                    }}>Get Started</button>
                     </div>
                     <div className="carousel-item">
                         <img src="/img/index/index-2.png" className="d-block w-100" alt="..." />

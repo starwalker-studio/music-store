@@ -6,7 +6,7 @@ import Register from './Register/Register';
 const MyAccount = () => {
     const key = <FontAwesomeIcon icon={faKey} size="2x" />
     return (
-        <div className="container">
+        <div className="container my-account">
             <div className="mt-2">
                 <div className="row p-2 me-3 ms-3 justify-content-center">
                     <div className="row g-0 col-9">

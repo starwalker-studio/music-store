@@ -1,3 +1,8 @@
+.my-account {
+  margin-top: 2em;
+  margin-bottom: 9.5em;
+}
+
 .my-account-title {
   background-color: #5a6e99;
   display: flex;
@@ -16,11 +21,9 @@
 
 .create-account-text {
   background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.7119981781775211) 40%,
-    rgba(207, 234, 255, 1) 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(255, 255, 255, 0.7119981781775211) 40%,
+      rgba(207, 234, 255, 1) 100%);
 }
 
 .invalid-return {

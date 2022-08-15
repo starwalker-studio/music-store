@@ -2,7 +2,8 @@
     background-color: $footer-newsletter-bar;
 
     &__content {
-        padding: 1.68em;
+        padding: .78em;
+        padding-bottom: 1.8em;
     }
 }
 
@@ -18,7 +19,72 @@
     font-weight: 400;
     line-height: 1.5;
     width: 6.6em;
+
     &:hover {
         background: $button-background-color-hover;
     }
+}
+
+.social-media {
+    background-color: $nav-menu-bar;
+
+    &__content {
+        padding: .2em;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        -webkit-box-align: center;
+        align-content: center;
+
+        &__title {
+            text-align: center;
+            font-size: large;
+            padding: 0.50rem 1.75rem;
+            font-weight: bold;
+            font-weight: bold;
+            color: $social-button-color;
+        }
+    }
+}
+
+.social-media-btn {
+    margin-left: 1em;
+    display: inline-flex;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $social-button-color;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    // border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: .72em;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.15s ease-in-out,
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+
+    &:hover {
+        color: $social-button-color-hover;
+    }
+    
+}
+
+.footer-links {
+    background: $nav-bar-color;
+    color: $footer-links-font-color;
 }
