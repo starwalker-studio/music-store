@@ -1,0 +1,54 @@
+.account-info-box {
+    border: solid #d9d9d9;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-width: 1px 1px 1px;
+    margin-top: 5.2px;
+    margin-bottom: 5.2px;
+    // padding: 2.5px;
+}
+
+.account-profile-image {
+    margin-top: 5.2px;
+    margin-bottom: 5.2px;
+}
+
+#user-account-info p, input{
+    padding-top: 10.7px;
+    padding-bottom: 10.7px;
+    padding-right: 8.5px;
+    padding-left: 8.5px;
+    display: table-cell;
+    border: none;
+}
+
+.title-user-info {
+    font-weight: bolder;
+}
+
+.account-edit-profile{    
+    color: $button-text-color;
+    font-size: 14px;
+    border: none;    
+    font-weight: bold;
+    max-width: 200px;
+    min-width: 124px;
+    padding: 8px 0;
+    text-align: center;    
+    border-radius: 7px;    
+    background: $account-edit-button;
+    cursor: pointer;
+    transition: all .5s;
+
+    &:hover {
+      background: $account-edit-button-hover;
+      border-radius: 50px;
+    }
+}
+
+#account-edit-button p {
+    font-weight: lighter;
+    font-size: smaller;
+}

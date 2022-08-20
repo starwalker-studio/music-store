@@ -4,14 +4,14 @@
 }
 
 .my-account-title {
-  background-color: #5a6e99;
+  background-color: $account-title-color-bar;
   display: flex;
   color: $register-text-color;
   border-top-right-radius: 0.25rem !important;
   border-top-left-radius: 0.25rem !important;
 
   &-icon {
-    background-color: #485777;
+    background-color: $account-title-icon-color-bar;
     border-top-left-radius: 0.25rem !important;
     padding: 1ex;
     padding-left: 1.7ex;
@@ -52,4 +52,69 @@
   border-top: 1px solid #ccc;
   margin: 0;
   padding: 20px 0 20px;
+}
+
+.user-account {
+  font:  14px/1.5 Helvetica,Arial,sans-serif;
+
+  &__menu {
+    background: #ecf3fb;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-repeat: repeat, no-repeat;
+    background-position: 0 0, 0 0;
+    border: solid #c8e0fa;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-color: rgb(200, 224, 250);
+    border-bottom-width: medium;
+    border-left-width: medium;
+    border-bottom-color: #afcae8;
+    border-width: 0 0 1px 1px;
+    border-radius: 0 0 0 5px;
+    padding-top: 1em;
+    vertical-align: top;
+    width: 228px;
+    line-height: 25.5px;
+  }
+
+  &__display {
+    border-left-color: #afcae8;
+    border-bottom-left-radius: 0;
+    height: auto !important;
+    min-height: 340px;
+    border: solid #d9d9d9;
+    border-top-width: medium;
+    border-right-width: medium;
+    border-bottom-color: rgb(217, 217, 217);
+    border-bottom-width: medium;
+    border-left-color: rgb(217, 217, 217);
+    border-left-width: medium;
+    border-width: 0 1px 1px 1px;
+    border-bottom-color: #c9c9c9;
+    border-radius: 0 0 5px 5px;
+    border-bottom-left-radius: 0;
+    padding: .8em;
+  }
+}
+
+.svg--icon--menu {
+  width: 40.5px;
+  text-align: center;
+  display: inline-block;  
+}
+
+#user-menu .active {
+  background: #d5e5f8;  
+  box-sizing: border-box;
+  font-weight: 700;  
+  width: 100%;
+}
+
+#user-menu .link-dark:hover {
+  background: #e1eefc;  
+  box-sizing: border-box;
+  font-weight: 700;  
+  width: 100%;
 }

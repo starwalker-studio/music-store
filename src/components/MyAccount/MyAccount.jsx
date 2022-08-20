@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKey } from '@fortawesome/free-solid-svg-icons';
 import Register from './Register/Register';
+import UserAccount from './UserAccount/UserAccount';
 
 const MyAccount = () => {
     const key = <FontAwesomeIcon icon={faKey} size="2x" />
+    const [user, setUser] = useState(true);
     return (
         <div className="container my-account">
             <div className="mt-2">
@@ -16,7 +18,13 @@ const MyAccount = () => {
                                 <h4 className="fw-bold">My account</h4>
                             </div>
                         </div>
-                        <Register />
+                        {
+                            user ? (
+                                <UserAccount />
+                            ) : (
+                                <Register />
+                            )
+                        }
                     </div>
                 </div>
             </div>
