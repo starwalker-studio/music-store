@@ -75,8 +75,9 @@
     border-radius: 0 0 0 5px;
     padding-top: 1em;
     vertical-align: top;
-    width: 228px;
+    width: 198px;
     line-height: 25.5px;
+    flex: 0 0 auto;
   }
 
   &__display {
@@ -96,6 +97,8 @@
     border-radius: 0 0 5px 5px;
     border-bottom-left-radius: 0;
     padding: .8em;
+    padding-right: 2.58em;
+    padding-left: 2.58em;
   }
 }
 

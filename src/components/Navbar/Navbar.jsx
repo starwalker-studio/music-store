@@ -37,10 +37,11 @@ const Navbar = () => {
                                     <a className="nav-link dropdown-toggle"
                                         role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false" id="navbarDropdown"
-                                        href="#0">
+                                        href="#">
                                         {
                                             localUser ? localUser.user_name : 'Account'
-                                        }</a>
+                                        }
+                                        </a>
                                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                         {
                                             localUser ? (

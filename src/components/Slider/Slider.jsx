@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Slider = () => {
+    const [localUser, setLocalUser] = useState({});
+
+    useEffect(() => { setLocalUser(JSON.parse(localStorage.getItem('user'))) }, []);
     return (
         <div>
             <div id="indexCarouselItems" className="carousel carousel-dark slide"
@@ -12,7 +15,7 @@ const Slider = () => {
                             <button type="button" 
                                     className="text-button__slide-1"
                                     onClick={()=>{
-                                        window.location = '/create_account';
+                                        localUser ? (window.location = '/my-account/account-info') : (window.location = '/create-account')
                                     }}>Get Started</button>
                     </div>
                     <div className="carousel-item">
