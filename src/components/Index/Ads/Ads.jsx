@@ -1,9 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGuitar } from '@fortawesome/free-solid-svg-icons';
-import { faTruck } from '@fortawesome/free-solid-svg-icons';
-import { faHeadset } from '@fortawesome/free-solid-svg-icons';
-import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import { faGuitar, faTruck, faHeadset, faCreditCard } from '@fortawesome/free-solid-svg-icons';
 
 const Ads = () => {
 
