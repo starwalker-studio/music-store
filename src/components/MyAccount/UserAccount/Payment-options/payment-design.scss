@@ -1,47 +1,86 @@
 .payment-display {
     // flex: 0;
     width: fit-content;
-    
+
 }
 
-.payment-box {    
+.card-info-border {
+    border: solid #d9d9d9;
+    border-bottom-width: medium;
+    border-width: 1px 0 0 0;
+    padding-top: .90ex;
+    padding-bottom: 1em;
+}
+
+.my-card-number {
+    max-width: 100ex;
+    width: 50.8ex;
+    // width: max-content;
+    display: inline-block;
+}
+
+.payment-box {
     padding-right: 2.5ex;
 }
 
 .payment-info {
-    padding-top: 1ex;
+    padding-top: 1.5ex;
     padding-bottom: 1ex;
+    // display: contents;
 }
 
 #payment-info-box label {
     font-size: small;
     font-weight: bold;
-    padding-bottom: 4.4px;
+    // padding-bottom: 4.4px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #card-info-title p {
     font-size: small;
     font-weight: 900;
+    // display: inline;
 }
 
-.edit-card-button {
-    color: $button-text-color;
-    font-size: 14px;
-    border: none;
-    font-weight: bold;
-    max-width: 200px;
-    min-width: 110px;
-    padding: 8px 0;
-    text-align: center;
-    border-radius: 7px;
-    background: $account-edit-button;
-    cursor: pointer;
-    transition: all .5s;
+.card-button {
+    &__edit {
+        background: $account-edit-button;
+        color: $button-text-color;
+        font-size: 14px;
+        border: none;
+        font-weight: bold;
+        max-width: 200px;
+        min-width: 110px;
+        padding: 8px 0;
+        text-align: center;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: all .5s;
 
-    &:hover {
-        background: $account-edit-button-hover;
-        border-radius: 50px;
+        &:hover {
+            background: $account-edit-button-hover;
+            border-radius: 50px;
+        }
+    }
+
+    &__cancel {
+        background: $cancel-edit-button;
+        color: $button-text-color;
+        font-size: 14px;
+        border: none;
+        font-weight: bold;
+        max-width: 200px;
+        min-width: 110px;
+        padding: 8px 0;
+        text-align: center;
+        border-radius: 7px;
+        cursor: pointer;
+        transition: all .5s;
+
+        &:hover {
+            background: $cancel-edit-button-hover;
+            border-radius: 50px;
+        }
     }
 }
 
@@ -52,7 +91,7 @@
     background-color: rgb(209, 209, 209);
 }
 
-.border-buttton-edit-card {
+.border-button-edit-card {    
     border: solid #d9d9d9;
     border-top-width: medium;
     border-width: 1px 0 0 0;
