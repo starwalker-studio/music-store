@@ -60,8 +60,8 @@ const UserAccount = () => {
                                         <Switch>
                                             <Route path="/my-account/account-info" component={Info} exact />
                                             <Route path="/my-account/payment-options" component={PaymentOptions} exact />
-                                            <Route path="/my-account/wish-list" component={MyCart} exact />
-                                            <Route path="/my-account/my-cart" component={MyWishList} exact />
+                                            <Route path="/my-account/wish-list" component={MyWishList} exact />
+                                            <Route path="/my-account/my-cart" component={MyCart} exact />
                                         </Switch>
                                     </div>
                                 </div>
