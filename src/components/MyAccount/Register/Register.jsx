@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerNewAccount } from '../../../redux/newAccountRedux';
-import * as environment from '../../../environment';
+import * as environment from '../../../dummy/environment';
 
 const Register = () => {
     //form values

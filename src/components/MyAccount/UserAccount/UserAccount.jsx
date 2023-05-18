@@ -13,7 +13,6 @@ const UserAccount = () => {
     const wishList = <FontAwesomeIcon icon={faBars} size="1x" />
     const cart = <FontAwesomeIcon icon={faShoppingCart} size="1x" />
     const homeUser = <FontAwesomeIcon icon={faHouseUser} size="2x" />
-
     return (
         <Router>
             <div className="container my-account">
@@ -71,7 +70,6 @@ const UserAccount = () => {
                 </div>
             </div>
         </Router>
-
     )
 }
 

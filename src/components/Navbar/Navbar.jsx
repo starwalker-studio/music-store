@@ -15,7 +15,7 @@ const Navbar = () => {
         <div>
             <nav className='navbar navbar-expand-lg navbar-dark navbar-menu-color'>
                 <div className="container">
-                    <img src="/img/logo-white-nav.png" className='logo-nav ms-5' alt="sound garage" />
+                    <img src="/img/logo-white-nav.png" className='logo-nav' alt="sound garage" />
                     <div className="text-left me-5">
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -74,22 +74,16 @@ const Navbar = () => {
             <div className='nav-menu-bar'>
                 <ul className="nav justify-content-center p-1">
                     <li className="nav-item">
-                        <a className="nav-link me-4 ms-4" href="#">Amps & Effects</a>
+                        <NavLink className="nav-link me-4 ms-4" to="/shop/amps-effects" exact>Amps & Effects</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Guitars</a>
+                        <a className="nav-link me-4 ms-4" aria-current="page" href="#">Guitars</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link me-4 ms-4" href="#">Basses</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link me-4 ms-4" href="#">Drums</a>
-                    </li>
-                    <li className="nav-item">
                         <a className="nav-link me-4 ms-4" href="#">Home Studio</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link me-4 ms-4" href="#">Live Sound</a>
                     </li>
                 </ul>
             </div>
