@@ -2,6 +2,7 @@ import React from 'react';
 import { handleToggle } from '../Item/item-functions';
 
 const BrandList = (props) => {
+
     return (
         <div>
             <div className="item-brand-title">

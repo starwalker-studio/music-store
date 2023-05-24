@@ -5,7 +5,8 @@ const initData = {
     brands: [],
     items: [],
     totalSizeCatalog: 0,
-    sizeCatalogByBrand: 0
+    sizeCatalogByBrand: 0,
+    brandList: []
 };
 
 // Types
@@ -13,6 +14,7 @@ const GUITAR_COMBO_AMP_CATALOG_BY_PAGINATION = "GUITAR_COMBO_AMP_CATALOG_BY_PAGI
 const GUITAR_COMBO_AMP_COUNT_TABLE = "GUITAR_COMBO_AMP_COUNT_TABLE";
 const GUITAR_COMBO_AMP_CATALOG_BY_BRAND = "GUITAR_COMBO_AMP_CATALOG_BY_BRAND";
 const GUITAR_COMBO_AMP_BRAND_BY_IDS = "GUITAR_COMBO_AMP_BRAND_BY_IDS";
+const GUITAR_COMBO_AMP_BRAND_LIST = "GUITAR_COMBO_AMP_BRAND_LIST";
 
 // Reducer
 export default function guitarComboAmpReducer(state = initData, action) {
@@ -37,6 +39,11 @@ export default function guitarComboAmpReducer(state = initData, action) {
             return {
                 ...state,
                 brands: action.brands
+            };
+        case GUITAR_COMBO_AMP_BRAND_LIST:
+            return {
+                ...state,
+                brandList: action.list
             };
         default:
             return state;
@@ -88,6 +95,17 @@ export const getGuitarComboAmpTableCount = () => async (dispatch) => {
     }
 }
 
+export const getGuitarComboAmpBrandList = () => async (dispatch) => {
+    try {
+        await axios.get("/guitar-combo-amp/get-brand-list")
+            .then((response) => {
+                getResponseGuitarComboAmpBrandList(response, dispatch);
+            })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 function getResponseGuitarComboAmpCatalog(response, dispatch) {
     dispatch({
         type: GUITAR_COMBO_AMP_CATALOG_BY_PAGINATION,
@@ -115,4 +133,11 @@ function getResponseGuitarComboAmpBrandsByIds(response, dispatch) {
         type: GUITAR_COMBO_AMP_BRAND_BY_IDS,
         brands: response.data
     })
+}
+
+function getResponseGuitarComboAmpBrandList(response, dispatch) {
+    dispatch({
+        type: GUITAR_COMBO_AMP_BRAND_LIST,
+        list: response.data
+    });
 }

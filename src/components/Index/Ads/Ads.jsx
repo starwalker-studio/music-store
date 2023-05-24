@@ -13,7 +13,7 @@ const Ads = () => {
         <section className='value-ads'>
             <h2 className='fst-normal'>Get More at Wave Store</h2>
             <div className='value-ads__links'>
-                <a href="">
+                <a href="/#">
                     <div className="value-ads__icon">
                         <span>{guitar}</span>
                     </div>
@@ -24,7 +24,7 @@ const Ads = () => {
                     </div>
                     <div className="value-ads__cta">Learn More</div>
                 </a>
-                <a href="">
+                <a href="/#">
                     <div className="value-ads__icon">
                         <span>{truck}</span>
                     </div>
@@ -32,7 +32,7 @@ const Ads = () => {
                     <div className="value-ads__subtitle">Even on the small stuff.</div>
                     <div className="value-ads__cta">Learn More</div>
                 </a>
-                <a href="">
+                <a href="/#">
                     <div className="value-ads__icon">
                         <span>{headset}</span>
                     </div>
@@ -43,7 +43,7 @@ const Ads = () => {
                     </div>
                     <div className="value-ads__cta">Learn More</div>
                 </a>
-                <a href="">
+                <a href="/#">
                     <div className="value-ads__icon">
                         <span>{creditCard}</span>
                     </div>

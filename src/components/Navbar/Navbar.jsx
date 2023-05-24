@@ -25,19 +25,19 @@ const Navbar = () => {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto">
                                 <li className="nav-item">
-                                    <NavLink className="nav-item nav-link me-3" to="/" exact>Home</NavLink>
+                                    <NavLink className="nav-item nav-link me-3" to="/void" exact>Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-item nav-link me-3" to="/" exact>Features</NavLink>
+                                    <NavLink className="nav-item nav-link me-3" to="/void" exact>Features</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-item nav-link me-3" to="/" exact>Preferences</NavLink>
+                                    <NavLink className="nav-item nav-link me-3" to="/void" exact>Preferences</NavLink>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle"
                                         role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false" id="navbarDropdown"
-                                        href="#">
+                                        href="/void">
                                         {
                                             localUser ? localUser.user_name : 'Account'
                                         }
@@ -50,7 +50,7 @@ const Navbar = () => {
                                                         <button className="btn btn-dark">Log out</button>
                                                     </div>
                                                     <div className="flex-fill">
-                                                        <NavLink className="small" to="/" exact>My account</NavLink>
+                                                        <NavLink className="small" to="/void" exact>My account</NavLink>
                                                     </div>
                                                 </li>
                                             ) : (
@@ -59,7 +59,7 @@ const Navbar = () => {
                                                         <button className="btn btn-dark">Log in</button>
                                                     </div>
                                                     <div className="flex-fill">
-                                                        <NavLink className="small" to="/" exact>Create your account</NavLink>
+                                                        <NavLink className="small" to="/void" exact>Create your account</NavLink>
                                                     </div>
                                                 </li>
                                             )
@@ -77,13 +77,13 @@ const Navbar = () => {
                         <NavLink className="nav-link me-4 ms-4" to="/shop/amps-effects" exact>Amps & Effects</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link me-4 ms-4" aria-current="page" href="#">Guitars</a>
+                        <a className="nav-link me-4 ms-4" aria-current="page" href="/void">Guitars</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link me-4 ms-4" href="#">Basses</a>
+                        <a className="nav-link me-4 ms-4" href="/void">Basses</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link me-4 ms-4" href="#">Home Studio</a>
+                        <a className="nav-link me-4 ms-4" href="/void">Home Studio</a>
                     </li>
                 </ul>
             </div>

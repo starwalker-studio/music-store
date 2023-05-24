@@ -28,6 +28,14 @@ export function isNextPage(offset, totalPages) {
     return offset < totalPages - 1;
 }
 
+export function isOffsetEqualCeroOrNextpage(offset, totalPages) {
+    return offset < totalPages - 1 || offset === 0;
+}
+
+export function isNotOffsetEqualCeroOrNextpage(offset, totalPages) {
+    return !offset < totalPages - 1 || offset === 0;
+}
+
 export function displayPages(offset, totalPages) {
     return `Page ${offset + 1} of ${totalPages}`;
 }

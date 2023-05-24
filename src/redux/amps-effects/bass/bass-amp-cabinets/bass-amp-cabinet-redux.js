@@ -5,7 +5,8 @@ const initData = {
     brands: [],
     items: [],
     totalSizeCatalog: 0,
-    sizeCatalogByBrand: 0
+    sizeCatalogByBrand: 0,
+    brandList: []
 };
 
 // Types
@@ -13,6 +14,7 @@ const BASS_GUITAR_AMP_CABINETS_CATALOG_BY_PAGINATION = "BASS_GUITAR_AMP_CABINETS
 const BASS_GUITAR_AMP_CABINETS_COUNT_TABLE = "BASS_GUITAR_AMP_CABINETS_COUNT_TABLE";
 const BASS_GUITAR_AMP_CABINETS_CATALOG_BY_BRAND = "BASS_GUITAR_AMP_CABINETS_CATALOG_BY_BRAND";
 const BASS_GUITAR_AMP_CABINETS_BRAND_BY_IDS = "BASS_GUITAR_AMP_CABINETS_BRAND_BY_IDS";
+const BASS_GUITAR_AMP_CABINETS_BRAND_LIST = "BASS_GUITAR_AMP_CABINETS_BRAND_LIST";
 
 // Reducer
 export default function bassAmpCabinetReducer(state = initData, action) {
@@ -37,6 +39,11 @@ export default function bassAmpCabinetReducer(state = initData, action) {
             return {
                 ...state,
                 brands: action.brands
+            };
+        case BASS_GUITAR_AMP_CABINETS_BRAND_LIST:
+            return {
+                ...state,
+                brandList: action.list
             };
         default:
             return state;
@@ -88,6 +95,17 @@ export const getBassAmpCabinetTableCount = () => async (dispatch) => {
     }
 }
 
+export const getBassAmpCabinetBrandList = () => async (dispatch) => {
+    try {
+        await axios.get("/bass-amp-cabinet/get-brand-list")
+            .then((response) => {
+                getResponseBassAmpCabinetBrandList(response, dispatch);
+            })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 function getResponseBassAmpCabinetCatalog(response, dispatch) {
     dispatch({
         type: BASS_GUITAR_AMP_CABINETS_CATALOG_BY_PAGINATION,
@@ -114,5 +132,12 @@ function getResponseBassAmpCabinetBrandsByIds(response, dispatch) {
     dispatch({
         type: BASS_GUITAR_AMP_CABINETS_BRAND_BY_IDS,
         brands: response.data
-    })
+    });
+}
+
+function getResponseBassAmpCabinetBrandList(response, dispatch) {
+    dispatch({
+        type: BASS_GUITAR_AMP_CABINETS_BRAND_LIST,
+        list: response.data
+    });
 }

@@ -7,12 +7,7 @@ import Index from './components/Index/Index';
 import MyAccount from './components/MyAccount/MyAccount';
 import UserAccount from './components/MyAccount/UserAccount/UserAccount';
 import AmpsEffects from './components/Item/Amps-Effects/AmpsEffects';
-import BassAmpCabinetIndex from './components/Item/Amps-Effects/Bass/Bass-amp-cabinets/BassAmpCabinetIndex';
-import BassAmpHeadIndex from './components/Item/Amps-Effects/Bass/Bass-amp-heads/BassAmpHeadIndex';
-import BassComboAmpIndex from './components/Item/Amps-Effects/Bass/Bass-combo-amp/BassComboAmpIndex';
-import GuitarAmpCabinetIndex from './components/Item/Amps-Effects/Guitar/Guitar-amp-cabinets/GuitarAmpCabinetIndex';
-import GuitarAmpHeadIndex from './components/Item/Amps-Effects/Guitar/Guitar-amp-heads/GuitarAmpHeadIndex';
-import GuitarComboAmpIndex from './components/Item/Amps-Effects/Guitar/Guitar-combo-amp/GuitarComboAmpIndex';
+import AmpIndex from './components/Item/Amps-Effects/Amps/AmpIndex';
 
 const App = () => {
 
@@ -26,12 +21,12 @@ const App = () => {
             <Route component={MyAccount} path="/create-account" exact />
             <Route component={UserAccount} path="/my-account/account-info" exact />
             <Route component={AmpsEffects} path="/shop/amps-effects" exact />
-            <Route component={BassAmpCabinetIndex} path="/shop/amps-effects/bass-amp-cabinets" exact />
-            <Route component={BassAmpHeadIndex} path="/shop/amps-effects/bass-amp-heads" exact />
-            <Route component={BassComboAmpIndex} path="/shop/amps-effects/bass-combo-amp" exact />
-            <Route component={GuitarAmpCabinetIndex} path="/shop/amps-effects/guitar-amp-cabinets" exact />
-            <Route component={GuitarAmpHeadIndex} path="/shop/amps-effects/guitar-amp-heads" exact />
-            <Route component={GuitarComboAmpIndex} path="/shop/amps-effects/guitar-combo-amp" exact />
+            <Route path="/shop/amps-effects/bass-amp-cabinets" children={<AmpIndex type="BASS_AMP_CABINET"/>} exact />
+            <Route path="/shop/amps-effects/bass-amp-heads" children={<AmpIndex type="BASS_AMP_HEAD"/>} exact />
+            <Route path="/shop/amps-effects/bass-combo-amp" children={<AmpIndex type="BASS_COMBO_AMP"/>} exact />
+            <Route path="/shop/amps-effects/guitar-amp-cabinets" children={<AmpIndex type="GUITAR_AMP_CABINET"/>} exact />
+            <Route path="/shop/amps-effects/guitar-amp-heads" children={<AmpIndex type="GUITAR_AMP_HEAD"/>} exact />
+            <Route path="/shop/amps-effects/guitar-combo-amp" children={<AmpIndex type="GUITAR_COMBO_AMP"/>} exact />  
           </Switch>
           <Footer />
         </div>

@@ -5,7 +5,8 @@ const initData = {
     brands: [],
     items: [],
     totalSizeCatalog: 0,
-    sizeCatalogByBrand: 0
+    sizeCatalogByBrand: 0,
+    brandList: []
 };
 
 // Types
@@ -13,6 +14,7 @@ const GUITAR_AMP_HEADS_CATALOG_BY_PAGINATION = "GUITAR_AMP_HEADS_CATALOG_BY_PAGI
 const GUITAR_AMP_HEADS_COUNT_TABLE = "GUITAR_AMP_HEADS_COUNT_TABLE";
 const GUITAR_AMP_HEADS_CATALOG_BY_BRAND = "GUITAR_AMP_HEADS_CATALOG_BY_BRAND";
 const GUITAR_AMP_HEADS_BRAND_BY_IDS = "GUITAR_AMP_HEADS_BRAND_BY_IDS";
+const GUITAR_AMP_HEADS_BRAND_LIST = "GUITAR_AMP_HEADS_BRAND_LIST";
 
 // Reducer
 export default function guitarAmpHeadReducer(state = initData, action) {
@@ -37,6 +39,11 @@ export default function guitarAmpHeadReducer(state = initData, action) {
             return {
                 ...state,
                 brands: action.brands
+            };
+        case GUITAR_AMP_HEADS_BRAND_LIST:
+            return {
+                ...state,
+                brandList: action.list
             };
         default:
             return state;
@@ -88,6 +95,17 @@ export const getGuitarAmpHeadTableCount = () => async (dispatch) => {
     }
 }
 
+export const getGuitarAmpHeadBrandList = () => async (dispatch) => {
+    try {
+        await axios.get("/guitar-amp-head/get-brand-list")
+            .then((response) => {
+                getResponseGuitarAmpHeadBrandList(response, dispatch);
+            })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 function getResponseGuitarAmpHeadCatalog(response, dispatch) {
     dispatch({
         type: GUITAR_AMP_HEADS_CATALOG_BY_PAGINATION,
@@ -115,4 +133,11 @@ function getResponseGuitarAmpHeadBrandsByIds(response, dispatch) {
         type: GUITAR_AMP_HEADS_BRAND_BY_IDS,
         brands: response.data
     })
+}
+
+function getResponseGuitarAmpHeadBrandList(response, dispatch) {
+    dispatch({
+        type: GUITAR_AMP_HEADS_BRAND_LIST,
+        list: response.data
+    });
 }

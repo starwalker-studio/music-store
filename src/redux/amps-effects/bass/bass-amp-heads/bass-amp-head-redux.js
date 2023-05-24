@@ -5,7 +5,8 @@ const initData = {
     brands: [],
     items: [],
     totalSizeCatalog: 0,
-    sizeCatalogByBrand: 0
+    sizeCatalogByBrand: 0,
+    brandList: []
 };
 
 // Types
@@ -13,6 +14,7 @@ const BASS_GUITAR_AMP_HEADS_CATALOG_BY_PAGINATION = "BASS_GUITAR_AMP_HEADS_CATAL
 const BASS_GUITAR_AMP_HEADS_COUNT_TABLE = "BASS_GUITAR_AMP_HEADS_COUNT_TABLE";
 const BASS_GUITAR_AMP_HEADS_CATALOG_BY_BRAND = "BASS_GUITAR_AMP_HEADS_CATALOG_BY_BRAND";
 const BASS_GUITAR_AMP_HEADS_BRAND_BY_IDS = "BASS_GUITAR_AMP_HEADS_BRAND_BY_IDS";
+const BASS_GUITAR_AMP_HEADS_BRAND_LIST = "BASS_GUITAR_AMP_HEADS_BRAND_LIST";
 
 // Reducer
 export default function bassAmpHeadReducer(state = initData, action) {
@@ -37,6 +39,11 @@ export default function bassAmpHeadReducer(state = initData, action) {
             return {
                 ...state,
                 brands: action.brands
+            };
+        case BASS_GUITAR_AMP_HEADS_BRAND_LIST:
+            return {
+                ...state,
+                brandList: action.list
             };
         default:
             return state;
@@ -88,6 +95,17 @@ export const getBassAmpHeadTableCount = () => async (dispatch) => {
     }
 }
 
+export const getBassAmpHeadBrandList = () => async (dispatch) => {
+    try {
+        await axios.get("/bass-amp-head/get-brand-list")
+            .then((response) => {
+                getResponseBassAmpHeadBrandList(response, dispatch);
+            })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 function getResponseBassAmpHeadCatalog(response, dispatch) {
     dispatch({
         type: BASS_GUITAR_AMP_HEADS_CATALOG_BY_PAGINATION,
@@ -115,4 +133,11 @@ function getResponseBassAmpHeadBrandsByIds(response, dispatch) {
         type: BASS_GUITAR_AMP_HEADS_BRAND_BY_IDS,
         brands: response.data
     })
+}
+
+function getResponseBassAmpHeadBrandList(response, dispatch) {
+    dispatch({
+        type: BASS_GUITAR_AMP_HEADS_BRAND_LIST,
+        list: response.data
+    });
 }
