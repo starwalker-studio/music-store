@@ -1,0 +1,11 @@
+version: "2"
+services:
+    client:
+        image: wave-studio-image-prod
+        build:
+            dockerfile: Dockerfile.prod
+        container_name: wave-studio-container-prod
+        ports:
+            - "8080:80"
+        environment:
+            - NODE_ENV=production
