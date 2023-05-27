@@ -53,7 +53,7 @@ export default function bassAmpCabinetReducer(state = initData, action) {
 // Actions
 export const getBassAmpCabinetCatalogByPagination = (offset, limit) => async (dispatch) => {
     try {
-        await axios.get(`http://192.168.1.75:8042/bass-amp-cabinet/list/pagination?offset=${offset}&limit=${limit}`)
+        await axios.get(`/bass-amp-cabinet/list/pagination?offset=${offset}&limit=${limit}`)
             .then((response) => {
                 getResponseBassAmpCabinetCatalog(response, dispatch);
             })
@@ -64,7 +64,7 @@ export const getBassAmpCabinetCatalogByPagination = (offset, limit) => async (di
 
 export const getBassAmpCabinetCatalogByBrand = (brand, size, page) => async (dispatch) => {
     try {
-        await axios.get(`http://192.168.1.75:8042/bass-amp-cabinet/brands/search-by?brands=${brand}&size=${size}&page=${page}`)
+        await axios.get(`/bass-amp-cabinet/brands/search-by?brands=${brand}&size=${size}&page=${page}`)
             .then((response) => {
                 getResponseBassAmpCabinetCatalogbyBrand(response, dispatch);
             })
@@ -75,7 +75,7 @@ export const getBassAmpCabinetCatalogByBrand = (brand, size, page) => async (dis
 
 export const getBassAmpCabinetBrandsByIds = (ids) => async (dispatch) => {
     try {
-        await axios.get(`http://192.168.1.75:8042/brands/get-brands-by?ids=${ids}`)
+        await axios.get(`/brands/get-brands-by?ids=${ids}`)
             .then((response) => {
                 getResponseBassAmpCabinetBrandsByIds(response, dispatch);
             })
@@ -86,7 +86,7 @@ export const getBassAmpCabinetBrandsByIds = (ids) => async (dispatch) => {
 
 export const getBassAmpCabinetTableCount = () => async (dispatch) => {
     try {
-        await axios.get("http://192.168.1.75:8042/bass-amp-cabinet/get-count")
+        await axios.get("/bass-amp-cabinet/get-count")
             .then((response) => {
                 getTotalCountTable(response, dispatch);
             })
@@ -97,7 +97,7 @@ export const getBassAmpCabinetTableCount = () => async (dispatch) => {
 
 export const getBassAmpCabinetBrandList = () => async (dispatch) => {
     try {
-        await axios.get("http://192.168.1.75:8042/bass-amp-cabinet/get-brand-list")
+        await axios.get("/bass-amp-cabinet/get-brand-list")
             .then((response) => {
                 getResponseBassAmpCabinetBrandList(response, dispatch);
             })
