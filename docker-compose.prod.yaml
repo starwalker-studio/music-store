@@ -6,6 +6,6 @@ services:
             dockerfile: Dockerfile.prod
         container_name: wave-studio-container-prod
         ports:
-            - "3000:3000"
+            - "8080:80"
         environment:
             - NODE_ENV=production
