@@ -1,0 +1,16 @@
+version: '2'
+services:
+    client:
+        image: wave-studio-dev-image
+        build:
+            dockerfile: Dockerfile.dev
+        container_name: wave-studio-dev-container
+        volumes:
+            - ./client:/client
+            - node_modules:/client/node_modules/
+        ports:
+            - "8080:8080"
+        environment:
+            - NODE_ENV=development
+volumes:
+    - node_modules:

@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $1 = "prod" ]] && [[ $2 = "down" || $2 = "up" ]]; then
+if [[ $1 = "prod" || $1 = "dev" ]] && [[ $2 = "down" || $2 = "up" ]]; then
     cd ..
     fileEnv="docker-compose.${1}.yaml"
     downOrUp=$2
