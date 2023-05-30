@@ -61,8 +61,22 @@ service-wave-store-products
 
 set the proxy package.json -> "proxy": "http://192.168.1.75:8042",
 
+change scripts package.json -> "scripts": {
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+
 ## run services locally
 
 run the services on spring-tool suite
 
 set the proxy package.json -> "proxy": "http://localhost:8042",
+
+change scripts package.json -> "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
